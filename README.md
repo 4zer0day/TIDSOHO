@@ -59,7 +59,7 @@ Below are the steps needed to get TIDSOHO python script up and running at the Ra
 
 Below are the steps needed to get TIDSOHO python script up and running at the raspberry pi.
 
-1. Issue this command “git clone https://github.com/deadrepo/TIDSOHO”
+1. Issue this command “git clone https://github.com/deadrepo/TIDSOHO ”
 2. Issue this command “python3 setup.py” at the terminal on TIDSOHO folder
 3. Insert the network interface and API Key when asked
 4. Insert the Verification code to the telegram for confirmation
