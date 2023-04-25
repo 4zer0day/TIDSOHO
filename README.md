@@ -5,6 +5,7 @@ FYP 2k21
 Prerequisite
 
 Setting Up Kali Linux onto the Raspberry Pi
+
 There are 3 main things that is needed before the installation process, and it is as follows:
 - Balena Etcher (to burn Micro SD card with OS Image)
 - Kali Linux ARM Images (to run as the main OS)
